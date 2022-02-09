@@ -25,6 +25,9 @@ console.log('Sample JavaScript #2 HW #16');
 
 /*
  * #3
+
+
+
  *
  * Дана функция defUpperStr('My text'), которая возвращает текст, преобразованный в верхний регистр, т.е:
  * defUpperStr('My text') → 'MY TEXT'.
