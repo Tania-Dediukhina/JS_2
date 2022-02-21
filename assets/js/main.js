@@ -1,3 +1,4 @@
+//"use strict";
 console.log('Sample JavaScript #2 HW #16');
 
 /*
@@ -10,6 +11,12 @@ console.log('Sample JavaScript #2 HW #16');
  * lastName – любая фамилия, строка
  * age – любой возраст, число
  */
+var userObj={
+    firstName: 'Mary',
+     lastName : 'Smith',
+     age:25
+ };
+
 
 /*
  * #2
@@ -22,11 +29,18 @@ console.log('Sample JavaScript #2 HW #16');
  * userObj.lastName ← Фамилия'
  * userObj.fullName() → 'Имя Фамилия'.
  */
-
+var userObj={
+    firstName : 'Mary',
+     lastName : 'Smith',
+     age:25,
+     
+ };
+ userObj.fullName = function(){ return userObj.firstName +' '+ userObj.lastName;};
+  userObj.fullName();
 /*
  * #3
 
-
+var 
 
  *
  * Дана функция defUpperStr('My text'), которая возвращает текст, преобразованный в верхний регистр, т.е:
@@ -43,7 +57,11 @@ console.log('Sample JavaScript #2 HW #16');
 // console.log(defUpperStr('My text')); // MY TEXT
 
 // console.log(defUpperStr()); // DEFAULT TEXT
+function defUpperStr(n){
 
+    return(n || 'default text').toUpperCase();
+               
+    };   console.log(defUpperStr('My text'));console.log(defUpperStr());
 /*
  * #4
  *
@@ -66,6 +84,14 @@ console.log('Sample JavaScript #2 HW #16');
 // console.log(evenFn(15)); // [2, 4, 6, 8, 10, 12, 14]
 
 // console.log(evenFn(20)); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+function evenFn(n){
+    var arrey =[];
+for (var i=1; n>=i; i++) if (i%2===0) {arrey.push(i);};
+
+return arrey;
+}; console.log( evenFn(50));
+  
+
 
 /*
  * #5
@@ -82,17 +108,33 @@ console.log('Sample JavaScript #2 HW #16');
  * В реализации функции обязательно должны быть использованы операторы switch / case / default.
  */
 
-// console.log(weekFn(1)); // 'Понедельник'
 
-// console.log(weekFn(3)); // 'Среда'
+function weekFn(n){
+var str = '';
+    switch (n) {
+        case 1: str = 'Понедельник';break;
+        case 2: str = 'Вторник';break;
+        case 3: str = 'Среда';break;
+        case 4: str = 'Четверг';break;
+        case 5: str = 'Пятница';break;
+        case 6: str = 'Суббота';break;
+        case 7: str = 'Воскресенье';break;
+        default: str = null;
+    } return str;}
+    console.log(weekFn(1)); 
 
-// console.log(weekFn(7)); // 'Воскресенье'
+    console.log(weekFn(3)); 
+   
+    console.log(weekFn(7)); 
+   
+    console.log(weekFn(9)); 
+   
+    console.log(weekFn(1.5));
+   
+    console.log(weekFn('2')); 
+   
 
-// console.log(weekFn(9)); // null
 
-// console.log(weekFn(1.5)); // null
-
-// console.log(weekFn('2')); // null
 
 /*
  * #6
@@ -112,8 +154,6 @@ console.log('Sample JavaScript #2 HW #16');
  * Использование операторов if, switch – запрещено.
  */
 
-// console.log('-1 :', ageClassification(-1)); // -1 : null
-
 // console.log('5 :', ageClassification(5)); // 5 : детский возраст
 
 // console.log('34 :', ageClassification(34)); // 34 : молодой возраст
@@ -127,7 +167,27 @@ console.log('Sample JavaScript #2 HW #16');
 // console.log('110 :', ageClassification(110)); // 110 : долгожители
 
 // console.log('130 :', ageClassification(130)); // 130 : null
-
+ 
+      function ageClassification(n){
+        return n<0 ? null : n<=24 ? 'детский возраст': n<=44 ? 'молодой возраст': n<=65 ? 'средний возраст'
+        : n<=75 ? 'пожилой возраст' : n<=90 ? 'старческий возраст': n<=122 ? 'долгожители' : n>122 ? null :null;
+          }; 
+    console.log(1, ageClassification(-1) );
+      console.log(2, ageClassification(1) );
+      console.log(3, ageClassification(24) );
+      console.log(4, ageClassification(24.01));
+     console.log(5, ageClassification(44) );
+      console.log(6, ageClassification(44.01));
+     console.log(7, ageClassification(65));
+      console.log(8, ageClassification(65.01));
+      console.log(9, ageClassification(75));
+      console.log(10, ageClassification(75.01));
+      console.log(11, ageClassification(90));
+      console.log(12, ageClassification(90.01));
+      console.log(13, ageClassification(122));
+      console.log(14, ageClassification(122.01) );
+      console.log(15, ageClassification(150));
+    
 /*
  * Блок тестирования:
  * console.log(1, ageClassification(-1) === null);
@@ -147,6 +207,15 @@ console.log('Sample JavaScript #2 HW #16');
  * console.log(15, ageClassification(150) === null);
  */
 
+
+function oddFn(n){
+    var arrey = [];
+    var i =0;
+    while (i++<n)if (i%2===1){arrey.push(i);
+    };
+       return arrey; 
+    }; console.log(oddFn(20));   
+    
 /*
  * #7
  *
@@ -169,6 +238,10 @@ console.log('Sample JavaScript #2 HW #16');
 // console.log(oddFn(15)); // [1, 3, 5, 7, 9, 11, 13, 15]
 
 // console.log(oddFn(20)); // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+
+
+
+
 
 /*
  * #8
@@ -194,19 +267,41 @@ console.log('Sample JavaScript #2 HW #16');
 
 // cbAdd(a, b) – вычисляет и возвращает сумму двух чисел a и b.
 
-/*
- * mainFunc() должна возвращать результат работы переданной ей возвратной функции, например:
- * mainFunc(2, 5, cbRandom) → случайно от 2 до 5 включительно
- * mainFunc(10, 30, cbRandom) → случайно 10..30 включительно
- * mainFunc(2, 5, cbPow) → 32
- * mainFunc(2, 5, cbAdd) → 7
- * mainFunc(2, 5, 'not a func') → false
- */
 
-// console.log(mainFunc(2, 5, cbRandom)); // целые числа в диапазоне 2..5
 
-// console.log(mainFunc(2, 5, cbPow)); // 32
+ 
+    function mainFunc (a, b, func){
+        if (typeof  func !=='function'){ return false;} 
+        else {return func(a,b);}
+    };
+    function cbRandom(a, b) {
+        return Math.floor(Math.random() * (b - a + 1)) + a;
+      };
+      mainFunc(2,5,cbRandom);
+      mainFunc(2, 5, 'not a func');
 
-// console.log(mainFunc(2, 5, cbAdd)); // 7
+    function cbPow(a, b) {
+        return Math.pow(a,b);
+      };
+      mainFunc(2,5,cbPow); 
+      
+      
+      function cbAdd(a, b) {
+        return a+b;
+      };
+      mainFunc(2,5,cbAdd);   
+      console.log(mainFunc(2, 5, cbRandom)); 
 
-// console.log(mainFunc(2, 5, 'not a func')); // false
+      console.log(mainFunc(2, 5, cbPow)); // 32
+     
+      console.log(mainFunc(2, 5, cbAdd)); // 7
+     
+      console.log(mainFunc(2, 5, 'not a func')); // false
+     
+
+
+
+
+
+
+
